@@ -1,13 +1,9 @@
 import { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import { Link } from "react-router-dom";
+import type { ProductItemProps } from "../../Types/ProductItemProps";
 
-interface ProductItemProps {
-  id: string;
-  image: string[];
-  name: string;
-  price: number;
-}
+
 const ProductItem: React.FC<ProductItemProps> = ({
   id,
   image,

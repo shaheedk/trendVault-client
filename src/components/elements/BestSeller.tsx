@@ -1,23 +1,35 @@
-import { useContext, useEffect, useState } from "react"
-import { ShopContext } from "../../context/ShopContext"
+import { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../../context/ShopContext";
+import type { Products } from "../../Types/Product";
+import Title from "./Title";
+import ProductItem from "./ProductItem";
 
-type products={
-    bestseller:boolean
-}
 
 const BestSeller = () => {
-    const {products}=useContext(ShopContext);
-    const [bestSeller,setBestSeller]=useState<products[]>([])
+  const { products } = useContext(ShopContext);
+  const [bestSeller, setBestSeller] = useState<Products[]>([]);
 
-    useEffect(()=>{
-const bestProduct=(products.filter((item:void) => (item.bestseller:tru)))
-    },[])
+  useEffect(() => {
+    const bestProduct = products.filter((item: Products) => item.bestseller);
+    setBestSeller(bestProduct.slice(0,5));
+  }, []);
 
   return (
-    <div>
-      
+    <div className="m-10 ">
+      <div className="text-center text-3xl py-8">
+        <Title text1={'BEST'} text2={'SELLER'}/>
+        <div className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores sapiente dignissimos commodi voluptas itaque maiores accusamus aliquid aut, enim fugit dolores rem iste ipsa quia optio magnam debitis doloribus minima.</div>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
+        {
+          bestSeller.map((item,index)=>(
+            <ProductItem key={index} id={item._id} name={item.name} image={item.image} price={item.price}/>
+          ))
+        }
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default BestSeller
+export default BestSeller;
