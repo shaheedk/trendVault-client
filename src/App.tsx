@@ -9,6 +9,7 @@ import Login from "./pages/Login"
 import PlaceOrder from "./pages/Placeorder"
 import Orders from "./pages/Orders"
 import Navbar from "./components/layout/Navbar"
+import Footer from "./components/layout/Footer"
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
 
 
       </Routes>
+      <Footer/>
     </div>
   )
 }
