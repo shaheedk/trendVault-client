@@ -2,18 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import Title from "../elements/Title";
 import ProductItem from "../elements/ProductItem";
+import type { Products } from "../../Types/Product";
 
-interface Product {
-  _id: string;
-  image: string[]; // or string if it's just one image
-  name: string;
-  price: number;
-}
+
 
 const LatestCollection = () => {
-  const { products } = useContext(ShopContext) as { products: Product[] };
+  const { products } = useContext(ShopContext) as { products: Products[] };
 
-  const [latestProducts, setLatestProducts] = useState<Product[]>([]);
+  const [latestProducts, setLatestProducts] = useState<Products[]>([]);
 
   useEffect(() => {
     if (products?.length) {
