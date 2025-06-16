@@ -1,4 +1,4 @@
-import { createContext, type ReactNode } from "react";
+import { createContext, useState, type ReactNode } from "react";
 import { products } from "../assets/assets";
 
 
@@ -9,14 +9,21 @@ interface ShopContextProviderProps {
   bestseller:boolean;
 }
 
-const currency='$';
-const delivery_fee=10;
+
 
 const ShopContextProvider = (props: ShopContextProviderProps) => {
+  const currency='$';
+const delivery_fee=10;
+const [search,setSearch]=useState<string>('')
+const [showSearch,setShowSearch]=useState<boolean>(true)
   const value = {
     products,
     currency,
-    delivery_fee
+    delivery_fee,
+    search,
+    showSearch,
+    setSearch,
+    setShowSearch
   };
 
   return (
