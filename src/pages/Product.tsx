@@ -2,15 +2,15 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { useContext, useEffect, useState } from "react";
 import { assets } from "../assets/assets";
-import { button } from "motion/react-client";
 import RelatedProducts from "../components/elements/RelatedProducts";
-// import { Products } from "../Types/Product";
+import type { Products } from "../Types/Product";
 
 const Product = () => {
   const { productId } = useParams();
   const { products, currency } = useContext(ShopContext);
 
-  const [productData, setproductData] = useState(false);
+const [productData, setproductData] = useState<Products | null>(null);
+
 
   const [image, setImage] = useState<string>("");
   const [size, setSize] = useState("");

@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react'
+import  { useContext, useEffect, useState } from 'react'
 import type { relatedprops } from '../../Types/Category'
 import { ShopContext } from '../../context/ShopContext'
 import Title from './Title'
 import ProductItem from './ProductItem'
+import type { Products } from '../../Types/Product'
 
 const RelatedProducts = ({category,subCategory}:relatedprops) => {
     const {products}=useContext(ShopContext)
@@ -14,8 +15,8 @@ const RelatedProducts = ({category,subCategory}:relatedprops) => {
         if(products.length>0){
 let productsCopy=products.slice();
 
-productsCopy=productsCopy.filter((item)=>category===item.category)
-productsCopy=productsCopy.filter((item)=>subCategory===item.subCategory)
+productsCopy=productsCopy.filter((item:Products)=>category===item.category)
+productsCopy=productsCopy.filter((item:Products)=>subCategory===item.subCategory)
 setRelated(productsCopy.slice(0,5))
         }
 },[products])
@@ -27,7 +28,7 @@ setRelated(productsCopy.slice(0,5))
         
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
             {
-                related.map((item,index)=>(
+                related.map((item:Products,index:number)=>(
                     <ProductItem key={index} id={item._id} name={item.name} price={item.price} image={item.image} />
                 ))
             }

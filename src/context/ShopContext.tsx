@@ -1,4 +1,4 @@
-import { createContext, useState, type ReactNode } from "react";
+import { createContext, useEffect, useState, type ReactNode } from "react";
 import { products } from "../assets/assets";
 
 
@@ -17,6 +17,31 @@ const delivery_fee=10;
 const [search,setSearch]=useState<string>('')
 const [showSearch,setShowSearch]=useState<boolean>(true)
 const [cartItems,setCartItems]=useState({});
+type CartItemsType = {
+  [itemId: string]: {
+    [size: string]: number;
+  };
+};
+
+const addToCart = async (itemId: string, size: string): Promise<void> => {
+  const cartData: CartItemsType = structuredClone(cartItems);
+
+  if (cartData[itemId]) {
+    if (cartData[itemId][size]) {
+      cartData[itemId][size] += 1;
+    } else {
+      cartData[itemId][size] = 1;
+    }
+  } else {
+    cartData[itemId] = {};
+    cartData[itemId][size] = 1;
+  }
+
+  setCartItems(cartData);
+};
+useEffect(()=>{
+  console.log(cartItems)
+})
   const value = {
     products,
     currency,
@@ -24,7 +49,10 @@ const [cartItems,setCartItems]=useState({});
     search,
     showSearch,
     setSearch,
-    setShowSearch
+    setShowSearch,
+    cartItems,
+    addToCart,
+    
   };
 
   return (
