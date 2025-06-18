@@ -3,13 +3,14 @@ import { ShopContext } from "../context/ShopContext";
 import type { Products } from "../Types/Product";
 import Title from "../components/elements/Title";
 import { assets } from "../assets/assets";
+import CartTotal from "../components/elements/CartTotal";
 type CartItemType = {
   _id: string;
   size: string;
   quantity: number;
 };
 const Cart = () => {
-  const { cartItems, currency, products ,updateQuantity} = useContext(ShopContext);
+  const { cartItems, currency, products ,updateQuantity,navigate} = useContext(ShopContext);
   const [cartData, setCartData] = useState<CartItemType[]>([]);
 
   useEffect(() => {
@@ -67,6 +68,14 @@ const Cart = () => {
               )
             })}
           </div>
+        </div>
+      </div>
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450px]">
+            <CartTotal/>
+            <div className="w-full text-end">
+              <button onClick={()=>navigate('/place-order')} className="bg-black text-white text-sm my-8 px-8 py-3"> PROCEED TO CHECKOUT </button>
+            </div>
         </div>
       </div>
     </div>
