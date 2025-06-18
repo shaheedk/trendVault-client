@@ -9,7 +9,7 @@ type CartItemType = {
   quantity: number;
 };
 const Cart = () => {
-  const { cartItems, currency, products } = useContext(ShopContext);
+  const { cartItems, currency, products ,updateQuantity} = useContext(ShopContext);
   const [cartData, setCartData] = useState<CartItemType[]>([]);
 
   useEffect(() => {
@@ -61,10 +61,10 @@ const Cart = () => {
                       </div>
                     </div>
                   </div>
-                  <input type="number" min={1} defaultValue={item.quantity}  className="border max-w-20 px-1 sm:px-2 py-1"/>
-                  <img onClick={} src={assets.bin_icon} className="w-4 mr-4 sm:w-5 cursor-pointer" alt="" />
+                  <input onChange={(e)=>e.target.value==='' ||e.target.value==='0'? null: updateQuantity(item._id,item.size,Number(e.target.value))} type="number" min={1} defaultValue={item.quantity}  className="border max-w-20 px-1 sm:px-2 py-1"/>
+                  <img onClick={()=>updateQuantity(item._id,item.size,0)} src={assets.bin_icon} className="w-4 mr-4 sm:w-5 cursor-pointer" alt="bin-icon" />
                 </div>
-              );
+              )
             })}
           </div>
         </div>

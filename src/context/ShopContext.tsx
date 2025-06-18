@@ -26,6 +26,7 @@ const addToCart = async (itemId: string, size: string): Promise<void> => {
 
   if(!size){
 toast.error('Select Product Size.')
+return; 
   }
   if (cartData[itemId]) {
     if (cartData[itemId][size]) {
@@ -42,6 +43,7 @@ toast.error('Select Product Size.')
 };
 
 const getCartCount=()=>{
+   
   let totalCount=0;
   for(const items in cartItems){
     for(const item in cartItems[items]){
@@ -59,7 +61,7 @@ totalCount+=cartItems[items][item];
 
 
 // useEffect(()=>{
-//   console.log(cartItems)
+//   console.log(null)
 // })
 
 // updateQuantity  function 
@@ -81,8 +83,7 @@ setCartItems(cartData)
     setShowSearch,
     cartItems,
     addToCart,
-    getCartCount,
-    updateQuantity
+    getCartCount,updateQuantity
   };
 
   return (
