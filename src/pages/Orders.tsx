@@ -19,7 +19,7 @@ const Orders = () => {
           >
             <div className="flex items-start gap-6 text-sm">
               <img
-                src={item.image[0]}
+                src={item.images[0]}
                 alt="product's image"
                 className="w-16 sm:w-20"
               />

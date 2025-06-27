@@ -18,7 +18,7 @@ const [productData, setproductData] = useState<Products | null>(null);
     products.map((item: any) => {
       if (item._id === productId) {
         setproductData(item);
-        setImage(item.image[0]);
+        setImage(item.images[0]);
         return null;
       }
     });
@@ -35,7 +35,7 @@ const [productData, setproductData] = useState<Products | null>(null);
         {/* product images  */}
         <div className="flex-1 flex flex-col-reverse gap-3 sm:flex-row ">
           <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full">
-            {productData.image.map((item: string, index: number) => (
+            {productData.images.map((item: string, index: number) => (
               <img
                 onClick={() => setImage(item)}
                 src={item}
@@ -69,7 +69,7 @@ const [productData, setproductData] = useState<Products | null>(null);
           <div className="flex flex-col gap-4 my-8">
             <p>Select Size</p>
             <div className="flex gap-2">
-              {productData.sizes.map((item, index) => (
+              {productData.size.map((item, index) => (
                 <button
                   onClick={() => setSize(item)}
                   className={`border py-2 px-4 bg-gray-100 ${

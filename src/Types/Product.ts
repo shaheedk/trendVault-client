@@ -4,8 +4,9 @@ export type Products = {
   name: string;
   description: string;
   price: number;
-  image: string[];
-  sizes: string[];
+  images: string[];
+  size: string[];
   category: string;
   subCategory: string;
+  bestseller:boolean;
 };

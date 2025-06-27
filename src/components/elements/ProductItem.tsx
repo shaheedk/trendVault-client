@@ -6,7 +6,7 @@ import type { ProductItemProps } from "../../Types/ProductItemProps";
 
 const ProductItem: React.FC<ProductItemProps> = ({
   id,
-  image,
+  images,
   name,
   price,
 }) => {
@@ -16,7 +16,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
       <div className="overflow-hidden">
         <img
           className="hover:scale-110 transition ease-in-out"
-          src={image[0]}
+          src={images[0]}
           alt="Product img"
         />
       </div>

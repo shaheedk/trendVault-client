@@ -7,15 +7,13 @@ import type { Products } from "../../Types/Product";
 
 
 const LatestCollection = () => {
-  const { products } = useContext(ShopContext) as { products: Products[] };
+ const { products } = useContext(ShopContext);
+const [latestProducts, setLatestProducts] = useState<Products[]>([]);
 
-  const [latestProducts, setLatestProducts] = useState<Products[]>([]);
+useEffect(() => {
+  setLatestProducts(products.slice(0, 10));
+}, [products]);
 
-  useEffect(() => {
-    if (products?.length) {
-      setLatestProducts(products.slice(0, 10));
-    }
-  }, []);
 
   return (
     <div className="my-10">
@@ -31,7 +29,7 @@ const LatestCollection = () => {
           <ProductItem
             key={item._id}
             id={item._id}
-            image={item.image}
+            images={item.images}
             name={item.name}
             price={item.price}
           />
