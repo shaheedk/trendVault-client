@@ -109,9 +109,18 @@ const ShopContextProvider = (props: ShopContextProviderProps) => {
       if (error instanceof Error) toast.error(error.message);
     }
   };
+
+  // use effects 
+
   useEffect(() => {
     getProductsData();
   }, []);
+
+useEffect(() => {
+  if (!token && localStorage.getItem('token')) {
+    setToken(localStorage.getItem('token')!);
+  }
+}, []);
 
   // values
 
