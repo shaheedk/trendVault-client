@@ -179,6 +179,7 @@ try {
     backendUrl,
     setToken,
     token,
+    setCartItems,
   };
 
   return (
