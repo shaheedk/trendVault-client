@@ -9,4 +9,5 @@ export type Products = {
   category: string;
   subCategory: string;
   bestseller:boolean;
+  
 };
