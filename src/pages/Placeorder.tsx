@@ -66,13 +66,24 @@ try {
         toast.error(response.data.message)
       }
       break;
-
+case 'stripe':
+  const resposeStripe=await axios.post(`${backendUrl}/api/order/stripe`,orderData,{headers:{token}})
+  if(resposeStripe.data.success){
+    const {session_url}=resposeStripe.data
+    window.location.replace(session_url)
+  }else{
+    toast.error(resposeStripe.data.message)
+  }
+  break
       default:
         break;
   }
   
 } catch (error) {
-  
+   console.log(error);
+
+        if (error instanceof Error) toast.error(error.message);
+     
 }
 
   }

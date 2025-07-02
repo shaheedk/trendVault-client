@@ -7,7 +7,7 @@ import type { Products } from "../Types/Product";
 
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency,addToCart, } = useContext(ShopContext);
+  const { products, currency,addToCart} = useContext(ShopContext);
 
 const [productData, setproductData] = useState<Products | null>(null);
 
@@ -15,7 +15,7 @@ const [productData, setproductData] = useState<Products | null>(null);
   const [image, setImage] = useState<string>("");
   const [size, setSize] = useState("");
   const fetchProductData = async () => {
-    products.map((item: any) => {
+    products.map((item: Products) => {
       if (item._id === productId) {
         setproductData(item);
         setImage(item.images[0]);
