@@ -76,7 +76,12 @@ const ShopContextProvider = (props: ShopContextProviderProps) => {
           if (cartItems[items][item] > 0) {
             totalCount += cartItems[items][item];
           }
-        } catch (error) {}
+        } catch (error) {
+           console.log(error);
+
+        if (error instanceof Error) toast.error(error.message);
+     
+        }
       }
     }
     return totalCount;
@@ -118,7 +123,12 @@ const ShopContextProvider = (props: ShopContextProviderProps) => {
           if (cartItems[items][item] > 0) {
             totalAmout += itemInfo!.price * cartItems[items][item];
           }
-        } catch (error) {}
+        } catch (error) {
+           console.log(error);
+
+        if (error instanceof Error) toast.error(error.message);
+     
+        }
       }
     }
     return totalAmout;
