@@ -7,7 +7,8 @@ import ShopContextProvider from './context/ShopContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
   
-    <Router><ShopContextProvider>
+    <Router>
+      <ShopContextProvider bestseller={true}>
     <App />
     </ShopContextProvider>
   </Router>

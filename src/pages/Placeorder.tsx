@@ -59,8 +59,30 @@ const Placeorder = () => {
       order_id: order.id,
       receipt: order.receipt,
       handler: async (response: RazorpayResponse) => {
-        console.log(response);
-      },
+  console.log(response);
+
+  try {
+    const verifyData = {
+      ...response,
+      userId: localStorage.getItem("userId"), // ✅ Send userId with the payload
+    };
+
+    const { data } = await axios.post(
+      `${backendUrl}/api/order/verifyRazorpay`,
+      verifyData,
+      { headers: token }
+    );
+
+    if (data.success) {
+      navigate("/orders");
+      setCartItems({}); 
+    }
+  } catch (error) {
+    console.log(error);
+    if (error instanceof Error) toast.error(error.message);
+  }
+},
+
     };
     const rzp = new window.Razorpay(options);
     rzp.open();

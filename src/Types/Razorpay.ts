@@ -4,6 +4,7 @@ export interface RazorpayResponse {
   razorpay_signature: string;
 }
 export interface OrderItemsRzp {
+  userId:string,
   id: string;        
   amount: number;    
   receipt: string;
