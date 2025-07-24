@@ -1,6 +1,6 @@
-<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TrendVault Logo">
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60" role="img" aria-label="TrendVault Logo">
   <rect width="100%" height="100%" fill="white"/>
   <text x="10" y="40" font-family="Afacad, sans-serif" font-size="28" font-weight="600" fill="#000000">
-    TrendVault<tspan fill="#6366F1" font-size="36" dy="-4">.</tspan>
+    TrendsVault<tspan fill="#6366F1" font-size="36" dy="-4">.</tspan>
   </text>
 </svg>

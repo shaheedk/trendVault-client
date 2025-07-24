@@ -1,0 +1,5 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TrendsVault Icon">
+  <rect width="64" height="64" rx="12" fill="#111827"/>
+  <path d="M20 24C20 19.5817 23.5817 16 28 16C32.4183 16 36 19.5817 36 24V28H44C45.1046 28 46 28.8954 46 30V44C46 45.1046 45.1046 46 44 46H20C18.8954 46 18 45.1046 18 44V30C18 28.8954 18.8954 28 20 28H28V24ZM32 28V24C32 21.7909 30.2091 20 28 20C25.7909 20 24 21.7909 24 24V28H32Z" fill="#FBBF24"/>
+  <text x="50%" y="60" dominant-baseline="middle" text-anchor="middle" font-size="6" fill="#F9FAFB" font-family="Arial, sans-serif">TrendsVault</text>
+</svg>
