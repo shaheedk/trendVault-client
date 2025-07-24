@@ -14,7 +14,7 @@ const Contact = () => {
           <p className="font-semibold text-xl text-gray-600">our Store</p>
           <p className="text-gray-500">080833 fsflkjfsda <br /> kochi, kerala,india </p>
           <p className="text-gray-500">Tel:(+91) 8904532053 <br />Emai:admin@gmail.com</p>
-          <p  className="font-semibold text-xl text-gray-600">Careers at zipCart</p>
+          <p  className="font-semibold text-xl text-gray-600">Careers at TrendsVault</p>
           <p  className="text-gray-500">Learn more about our team and job openings. </p>
           <button className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500">Explore Jobs</button>
         </div>

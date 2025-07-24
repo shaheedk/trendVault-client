@@ -35,7 +35,7 @@ const Footer = () => {
       <div>
         <hr />
        <p className="py-5 text-sm text-center">
-  Copyright {new Date().getFullYear()} @zipcart -All Right Reserved.
+  Copyright {new Date().getFullYear()} @TrendsVault -All Right Reserved.
 </p>
 
       </div>
