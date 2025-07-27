@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import type { Products } from "../Types/Product";
-import Title from "../components/elements/Title";
+import Title from "../components/common/title/Title";
 import { assets } from "../assets/assets";
-import CartTotal from "../components/elements/CartTotal";
+import CartTotal from "../components/common/CartTotal";
 type CartItemType = {
   _id: string;
   size: string;

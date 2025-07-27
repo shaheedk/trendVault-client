@@ -1,6 +1,6 @@
 import { assets } from "../assets/assets";
-import Title from "../components/elements/Title";
-import Newsletter from "../components/newslet/Newsletter";
+import Title from "../components/common/title/Title";
+import Newsletter from "../components/common/Newsletter";
 
 const About = () => {
   return (

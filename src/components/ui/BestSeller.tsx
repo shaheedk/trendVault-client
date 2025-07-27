@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import type { Products } from "../../Types/Product";
-import Title from "./Title";
-import ProductItem from "./ProductItem";
+import Title from "../common/title/Title";
+import ProductItem from "../product/components/ProductItem";
 
 
 const BestSeller = () => {
